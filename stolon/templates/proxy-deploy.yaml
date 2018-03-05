@@ -50,8 +50,8 @@ spec:
             value: {{ template "stolon.clusterName" . }}
           - name: STPROXY_STORE_BACKEND
             value: {{ .Values.store.backend | quote}}
-          - name: STPROXY_STORE_ENDPOINTS
-            value: {{ .Values.store.endpoints | quote }}
+          - name: STPROXY_KUBE_RESOURCE_KIND
+            value: "configmap"
           - name: STPROXY_LISTEN_ADDRESS
             value: {{ default "0.0.0.0" .Values.proxy.listenAddress | quote }}
           - name: STSENTINEL_DEBUG

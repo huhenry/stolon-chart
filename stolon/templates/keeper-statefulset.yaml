@@ -60,8 +60,8 @@ spec:
             value: {{ template "stolon.clusterName" . }}
           - name: STKEEPER_STORE_BACKEND
             value: {{ .Values.store.backend  | quote}}
-          - name: STKEEPER_STORE_ENDPOINTS
-            value: {{ .Values.store.endpoints | quote}}
+          - name: STKEEPER_KUBE_RESOURCE_KIND
+            value: "configmap"
           - name: STKEEPER_PG_REPL_USERNAME
             value: {{ .Values.pgReplUsername  | quote}}
           - name: STKEEPER_PG_REPL_PASSWORDFILE
